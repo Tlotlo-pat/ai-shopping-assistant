@@ -1,0 +1,84 @@
+/* Modern Blue-Themed Styles */
+
+#app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  width: 320px;
+  background: #f0f4f8; /* light blue background */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header: logo + app name */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 8px auto;
+  border-radius: 50%; /* rounded logo */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.app-name {
+  font-size: 20px;
+  color: #1e3a8a; /* deep blue */
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa); /* blue gradient */
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Input field */
+input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.3);
+}
+
+/* Output box */
+#output {
+  margin-top: 15px;
+  padding: 12px;
+  background: #e0f2fe; /* very light blue */
+  border-radius: 10px;
+  min-height: 60px;
+  white-space: pre-wrap;
+  color: #1e3a8a;
+  font-size: 14px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
