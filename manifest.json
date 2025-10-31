@@ -3,7 +3,7 @@
   "name": "Shopping Assistant (AI)",
   "version": "1.0",
   "description": "Translate, summarize, and optimize e-commerce browsing with AI.",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

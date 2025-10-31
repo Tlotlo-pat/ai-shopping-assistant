@@ -6,22 +6,31 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       document.querySelector('h1, .product-title')?.innerText?.trim() || '';
 
     const description =
-      document.querySelector('.product-description, #productDescription')?.innerText?.trim() ||
-      '';
+      document.querySelector('.product-description, #productDescription')?.innerText?.trim() || '';
 
-    // 🔥 Broaden selectors to capture most review blocks
+    // Try common e-commerce selectors + Tailwind-friendly fallback
     const reviews = Array.from(
       document.querySelectorAll(
-        '.review-text-content span, .review-text, .a-size-base.review-text, [data-hook="review-body"]'
+        `
+        .review-text-content span,
+        .review-text,
+        .a-size-base.review-text,
+        [data-hook="review-body"],
+        [class*="review"],
+        [class*="Review"],
+        [class*="comment"],
+        [class*="testimonial"],
+        p.text-gray-600,
+        p.text-sm
+        `
       )
     )
       .map((el) => el.innerText.trim())
-      .filter(Boolean);
+      .filter((t) => t.length > 20); // ignore short junk like “Good”
 
     console.log('[content.js] Extracted reviews:', reviews.length);
     sendResponse({ product, description, reviews });
 
-    // ✅ Keep message channel open until sendResponse fires
     return true;
   }
 });
